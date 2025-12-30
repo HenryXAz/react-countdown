@@ -1,0 +1,304 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients for different colored fireworks -->
+    <radialGradient id="red">
+      <stop offset="0%" style="stop-color:#ff0000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff0000;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="blue">
+      <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0066ff;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="gold">
+      <stop offset="0%" style="stop-color:#ffff00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff9900;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="purple">
+      <stop offset="0%" style="stop-color:#ff00ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8800ff;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="green">
+      <stop offset="0%" style="stop-color:#00ff00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00ff88;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Night sky background -->
+  <rect width="800" height="600" fill="#0a0a1a"/>
+  
+  <!-- Stars in background -->
+  <circle cx="100" cy="50" r="1" fill="white" opacity="0.8">
+    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="700" cy="80" r="1" fill="white" opacity="0.7">
+    <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="250" cy="100" r="1" fill="white" opacity="0.6">
+    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="600" cy="120" r="1" fill="white" opacity="0.8">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="450" cy="60" r="1" fill="white" opacity="0.7">
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Firework 1 - Red burst (center-left) -->
+  <g id="firework1">
+    <g transform="translate(250, 200)">
+      <!-- Center glow -->
+      <circle cx="0" cy="0" r="5" fill="#ff0000">
+        <animate attributeName="r" values="0;5;15;5" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;1;0;0;1" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      
+      <!-- Burst particles -->
+      <g id="redParticles">
+        <line x1="0" y1="0" x2="80" y2="0" stroke="url(#red)" stroke-width="2">
+          <animate attributeName="x2" values="0;80;80" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="56" y2="56" stroke="url(#red)" stroke-width="2">
+          <animate attributeName="x2" values="0;56;56" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="0;56;56" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="0" y2="80" stroke="url(#red)" stroke-width="2">
+          <animate attributeName="y2" values="0;80;80" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="-56" y2="56" stroke="url(#red)" stroke-width="2">
+          <animate attributeName="x2" values="0;-56;-56" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="0;56;56" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="-80" y2="0" stroke="url(#red)" stroke-width="2">
+          <animate attributeName="x2" values="0;-80;-80" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="-56" y2="-56" stroke="url(#red)" stroke-width="2">
+          <animate attributeName="x2" values="0;-56;-56" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="0;-56;-56" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="0" y2="-80" stroke="url(#red)" stroke-width="2">
+          <animate attributeName="y2" values="0;-80;-80" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="56" y2="-56" stroke="url(#red)" stroke-width="2">
+          <animate attributeName="x2" values="0;56;56" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="0;-56;-56" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3s" repeatCount="indefinite"/>
+        </line>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Firework 2 - Blue burst (top-right) -->
+  <g id="firework2">
+    <g transform="translate(550, 150)">
+      <circle cx="0" cy="0" r="5" fill="#00ffff">
+        <animate attributeName="r" values="0;5;15;5" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;1;0;0;1" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+      </circle>
+      
+      <g id="blueParticles">
+        <line x1="0" y1="0" x2="70" y2="0" stroke="url(#blue)" stroke-width="2">
+          <animate attributeName="x2" values="0;70;70" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="50" y2="50" stroke="url(#blue)" stroke-width="2">
+          <animate attributeName="x2" values="0;50;50" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="0;50;50" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="0" y2="70" stroke="url(#blue)" stroke-width="2">
+          <animate attributeName="y2" values="0;70;70" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="-50" y2="50" stroke="url(#blue)" stroke-width="2">
+          <animate attributeName="x2" values="0;-50;-50" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="0;50;50" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="-70" y2="0" stroke="url(#blue)" stroke-width="2">
+          <animate attributeName="x2" values="0;-70;-70" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="-50" y2="-50" stroke="url(#blue)" stroke-width="2">
+          <animate attributeName="x2" values="0;-50;-50" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="0;-50;-50" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="0" y2="-70" stroke="url(#blue)" stroke-width="2">
+          <animate attributeName="y2" values="0;-70;-70" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="50" y2="-50" stroke="url(#blue)" stroke-width="2">
+          <animate attributeName="x2" values="0;50;50" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="0;-50;-50" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+        </line>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Firework 3 - Gold burst (bottom-center) -->
+  <g id="firework3">
+    <g transform="translate(400, 350)">
+      <circle cx="0" cy="0" r="5" fill="#ffff00">
+        <animate attributeName="r" values="0;5;20;5" dur="4s" begin="1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;1;0;0;1" dur="4s" begin="1s" repeatCount="indefinite"/>
+      </circle>
+      
+      <g id="goldParticles">
+        <line x1="0" y1="0" x2="90" y2="0" stroke="url(#gold)" stroke-width="2">
+          <animate attributeName="x2" values="0;90;90" dur="4s" begin="1s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="4s" begin="1s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="64" y2="64" stroke="url(#gold)" stroke-width="2">
+          <animate attributeName="x2" values="0;64;64" dur="4s" begin="1s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="0;64;64" dur="4s" begin="1s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="4s" begin="1s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="0" y2="90" stroke="url(#gold)" stroke-width="2">
+          <animate attributeName="y2" values="0;90;90" dur="4s" begin="1s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="4s" begin="1s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="-64" y2="64" stroke="url(#gold)" stroke-width="2">
+          <animate attributeName="x2" values="0;-64;-64" dur="4s" begin="1s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="0;64;64" dur="4s" begin="1s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="4s" begin="1s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="-90" y2="0" stroke="url(#gold)" stroke-width="2">
+          <animate attributeName="x2" values="0;-90;-90" dur="4s" begin="1s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="4s" begin="1s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="-64" y2="-64" stroke="url(#gold)" stroke-width="2">
+          <animate attributeName="x2" values="0;-64;-64" dur="4s" begin="1s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="0;-64;-64" dur="4s" begin="1s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="4s" begin="1s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="0" y2="-90" stroke="url(#gold)" stroke-width="2">
+          <animate attributeName="y2" values="0;-90;-90" dur="4s" begin="1s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="4s" begin="1s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="64" y2="-64" stroke="url(#gold)" stroke-width="2">
+          <animate attributeName="x2" values="0;64;64" dur="4s" begin="1s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="0;-64;-64" dur="4s" begin="1s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="4s" begin="1s" repeatCount="indefinite"/>
+        </line>
+        
+        <!-- Additional diagonal particles for fuller effect -->
+        <line x1="0" y1="0" x2="45" y2="25" stroke="url(#gold)" stroke-width="1.5">
+          <animate attributeName="x2" values="0;45;45" dur="4s" begin="1s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="0;25;25" dur="4s" begin="1s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="4s" begin="1s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="25" y2="45" stroke="url(#gold)" stroke-width="1.5">
+          <animate attributeName="x2" values="0;25;25" dur="4s" begin="1s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="0;45;45" dur="4s" begin="1s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="4s" begin="1s" repeatCount="indefinite"/>
+        </line>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Firework 4 - Purple burst (left side) -->
+  <g id="firework4">
+    <g transform="translate(150, 280)">
+      <circle cx="0" cy="0" r="5" fill="#ff00ff">
+        <animate attributeName="r" values="0;5;12;5" dur="3.2s" begin="1.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;1;0;0;1" dur="3.2s" begin="1.8s" repeatCount="indefinite"/>
+      </circle>
+      
+      <g id="purpleParticles">
+        <line x1="0" y1="0" x2="60" y2="0" stroke="url(#purple)" stroke-width="2">
+          <animate attributeName="x2" values="0;60;60" dur="3.2s" begin="1.8s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3.2s" begin="1.8s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="42" y2="42" stroke="url(#purple)" stroke-width="2">
+          <animate attributeName="x2" values="0;42;42" dur="3.2s" begin="1.8s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="0;42;42" dur="3.2s" begin="1.8s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3.2s" begin="1.8s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="0" y2="60" stroke="url(#purple)" stroke-width="2">
+          <animate attributeName="y2" values="0;60;60" dur="3.2s" begin="1.8s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3.2s" begin="1.8s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="-42" y2="42" stroke="url(#purple)" stroke-width="2">
+          <animate attributeName="x2" values="0;-42;-42" dur="3.2s" begin="1.8s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="0;42;42" dur="3.2s" begin="1.8s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3.2s" begin="1.8s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="-60" y2="0" stroke="url(#purple)" stroke-width="2">
+          <animate attributeName="x2" values="0;-60;-60" dur="3.2s" begin="1.8s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3.2s" begin="1.8s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="-42" y2="-42" stroke="url(#purple)" stroke-width="2">
+          <animate attributeName="x2" values="0;-42;-42" dur="3.2s" begin="1.8s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="0;-42;-42" dur="3.2s" begin="1.8s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3.2s" begin="1.8s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="0" y2="-60" stroke="url(#purple)" stroke-width="2">
+          <animate attributeName="y2" values="0;-60;-60" dur="3.2s" begin="1.8s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3.2s" begin="1.8s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="42" y2="-42" stroke="url(#purple)" stroke-width="2">
+          <animate attributeName="x2" values="0;42;42" dur="3.2s" begin="1.8s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="0;-42;-42" dur="3.2s" begin="1.8s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3.2s" begin="1.8s" repeatCount="indefinite"/>
+        </line>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Firework 5 - Green burst (right side) -->
+  <g id="firework5">
+    <g transform="translate(650, 250)">
+      <circle cx="0" cy="0" r="5" fill="#00ff00">
+        <animate attributeName="r" values="0;5;14;5" dur="3.8s" begin="2.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;1;0;0;1" dur="3.8s" begin="2.2s" repeatCount="indefinite"/>
+      </circle>
+      
+      <g id="greenParticles">
+        <line x1="0" y1="0" x2="75" y2="0" stroke="url(#green)" stroke-width="2">
+          <animate attributeName="x2" values="0;75;75" dur="3.8s" begin="2.2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3.8s" begin="2.2s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="53" y2="53" stroke="url(#green)" stroke-width="2">
+          <animate attributeName="x2" values="0;53;53" dur="3.8s" begin="2.2s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="0;53;53" dur="3.8s" begin="2.2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3.8s" begin="2.2s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="0" y2="75" stroke="url(#green)" stroke-width="2">
+          <animate attributeName="y2" values="0;75;75" dur="3.8s" begin="2.2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3.8s" begin="2.2s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="-53" y2="53" stroke="url(#green)" stroke-width="2">
+          <animate attributeName="x2" values="0;-53;-53" dur="3.8s" begin="2.2s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="0;53;53" dur="3.8s" begin="2.2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3.8s" begin="2.2s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="-75" y2="0" stroke="url(#green)" stroke-width="2">
+          <animate attributeName="x2" values="0;-75;-75" dur="3.8s" begin="2.2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3.8s" begin="2.2s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="-53" y2="-53" stroke="url(#green)" stroke-width="2">
+          <animate attributeName="x2" values="0;-53;-53" dur="3.8s" begin="2.2s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="0;-53;-53" dur="3.8s" begin="2.2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3.8s" begin="2.2s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="0" y2="-75" stroke="url(#green)" stroke-width="2">
+          <animate attributeName="y2" values="0;-75;-75" dur="3.8s" begin="2.2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3.8s" begin="2.2s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="0" x2="53" y2="-53" stroke="url(#green)" stroke-width="2">
+          <animate attributeName="x2" values="0;53;53" dur="3.8s" begin="2.2s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="0;-53;-53" dur="3.8s" begin="2.2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;0;0" dur="3.8s" begin="2.2s" repeatCount="indefinite"/>
+        </line>
+      </g>
+    </g>
+  </g>
+</svg>

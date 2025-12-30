@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Logo from "./assets//Logo.webp";
+import Glasses from "./assets/Glasses.tsx";
+import Fireworks from "./assets/Fireworks.svg";
 
 function App() {
   const targetTimeTimestamp = import.meta.env.VITE_TARGET_TIME;
 
   const [timeRemaining, setTimeRemaining] = useState<string>("");
   const [itsTime, setItsTime] = useState<boolean>(false);
+  const [showingCelebrationText, setShowinCelebrationText] = useState<boolean>(true);
 
   const calculateRemainingTime = () => {
     const targetTime = new Date(targetTimeTimestamp).getTime();
@@ -22,14 +25,52 @@ function App() {
           `${days} días ${hours} horas ${minutes} minutos ${seconds} segundos`
         );
 
+        // createFirework();
         calculateRemainingTime();
+
+
       }, 1000);
     } else {
       setItsTime(true);
       setTimeRemaining(`FELIZ NAVIDAD A TODOS`);
+
+    const firstText = showCelebrationText("SHOW UNO") ;
+    const secondText = showCelebrationText("SHOW DOS") ;    
+      
+
+    secondText.then(() => {});
+
+    Promise.all([firstText, secondText]).then(() => { 
+    // setShowinCelebrationText(false);
+    })
+
+
+    // someText.forEach((text) => {
+    //   showCelebrationText(text);
+    // })    
+// createFinalFirework();
     }
   };
 
+  const showCelebrationText = (text: string) => {
+    return new Promise((resolve) => 
+      resolve(() => {
+    const textElement = document.createElement('div');
+    textElement.className = 'celebration-text';
+    textElement.textContent = text;
+    textElement.style.animation = 'fadeInOut 4s ease-in-out forwards';
+    document.body.appendChild(textElement);
+   
+    setTimeout(() => textElement.remove(), 4000);
+    
+      }
+      ),
+
+
+    )
+  
+  };
+ 
   const daysToDHMS = (
     daysFloat: number
   ): { days: number; hours: number; minutes: number; seconds: number } => {
@@ -96,19 +137,39 @@ function App() {
     calculateRemainingTime();
 
     // Initial fireworks
-    createFirework();
+
+    // createFirework();
   }, []);
 
   return (
     <>
+
+      {itsTime && (
+        <>
+        <div style={{position: "absolute", inset: 0, width: "100vw", height: "100vh", zIndex: -1}}>
+          <img src={Fireworks} alt="Fireworks" />
+        </div>
+
+        {!showingCelebrationText && (
+          <Glasses />
+        )} 
+
+        </>
+      )}
+
+
       <div className="container">
+        <div style={{position: "absolute", inset: 0, width: "100vw", height:"100vh", zIndex: -1}}>
+          <img src={Fireworks} alt="Fireworks" />
+        </div>
+
         <picture>
           <div className="logo_container">
             <img src={Logo} style={{ width: "100%" }} />
           </div>
         </picture>
 
-        {!itsTime ? (
+        {!itsTime && (
           <>
             <p className="center-text">SOLO FALTAN</p>
 
@@ -118,11 +179,13 @@ function App() {
 
             <p className="center-text"> PARA EL DESCANSO DE NAVIDAD</p>
           </>
-        ) : (
-          <span id="countdown" className="center-text">
-            {timeRemaining}
-          </span>
-        )}
+        ) 
+        // : (
+          // <span id="countdown" className="center-text">
+          //   {timeRemaining}
+          // </span>
+        // )  
+        }
       </div>
     </>
   );
